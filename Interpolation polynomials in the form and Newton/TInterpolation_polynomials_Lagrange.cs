@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interpolation_polynomials_in_the_form_and_Newton
+namespace Interpolation_polynomials_in_the_form_Lagrange
 {
-    internal class TInterpolation_polynomials
+    internal class TInterpolation_polynomials_Lagrange
     {
         double[] Original_Vector_X()
         {
