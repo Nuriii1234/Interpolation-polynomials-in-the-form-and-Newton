@@ -14,6 +14,16 @@ namespace Interpolation_polynomials_in_the_form_Lagrange
             return vector_X;
         }
         //-----------------------------------------------------------------------------------------
+        void PrintVector(double[] Vector)
+        {
+            for (int i = 0; i < Vector.Length; i++)
+            {
+                Console.Write(Vector[i] + "\t");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+        }
+        //-----------------------------------------------------------------------------------------
         double[] Function_X(double[] vector_X) 
         {
             double[] function_X = new double[vector_X.Length];
@@ -77,13 +87,19 @@ namespace Interpolation_polynomials_in_the_form_Lagrange
         //-----------------------------------------------------------------------------------------
         void Method_Lagrange()
         {
-            //Console.WriteLine("X* = ");
-            //var X = double.Parse(Console.ReadLine());
             var X = -0.5;
             var vector_X = Original_Vector_X();
+            Console.WriteLine("Vector x:");
+            PrintVector(vector_X);
             var function_X = Function_X(vector_X);
+            Console.WriteLine("Function x:");
+            PrintVector(function_X);
             var function_W = Function_W(X, vector_X);
+            Console.WriteLine("Function w:");
+            PrintVector(function_W);
             var function_WWW = Function_WWW(vector_X);
+            Console.WriteLine("Function www:");
+            PrintVector(function_WWW);
             double function_L = Function_L(function_X, function_W, function_WWW);
             Error_rate(X, function_L, vector_X);
         }
